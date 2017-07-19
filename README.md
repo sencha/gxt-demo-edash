@@ -1,5 +1,9 @@
-# GXT Dashboard Demo
+# GXT Executive Dashboard Demo
 Example GXT 4.0 Application using GXT theming.
+
+## Demo
+
+* [Dashboard Demo](http://examples.sencha.com/gxt-edash/4.0.0/)
 
 ## Requirements
 This project depends on GXT 4.0.2. 
