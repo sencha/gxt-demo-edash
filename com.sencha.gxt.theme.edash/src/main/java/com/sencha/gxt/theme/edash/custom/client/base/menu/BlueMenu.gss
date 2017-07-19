@@ -1,0 +1,10 @@
+.menu {
+  padding: 0px 2px 2px 0px;
+  outline: none;
+  background: none;
+  background-color: #2E6EAF;
+}
+
+.menuList {
+  padding: 0px;
+}

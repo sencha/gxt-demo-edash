@@ -1,0 +1,36 @@
+@def BORDER_COLOR value('theme.panel.border.color');
+@def BORDER_STYLE value('theme.panel.border.style');
+@def BORDER_WIDTH value('theme.panel.border.toString');
+@def TEXT_COLOR value('theme.panel.textColor');
+@def HEADER_BACKGROUND_COLOR value('theme.panel.headerBackgroundColor');
+@def HEADER_GRADIENT value('theme.panel.headerGradient');
+@def PADDING value('theme.panel.headerPadding.toString');
+
+.panel {
+  outline: 0 none;
+  border-style: BORDER_STYLE;
+  border-width: BORDER_WIDTH;
+  border-color: BORDER_COLOR;
+}
+
+.body {
+  background-color: #ececec;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  background: -webkit-linear-gradient(top, HEADER_GRADIENT);
+  /* @alternate */ background: -ms-linear-gradient(top, HEADER_GRADIENT);
+  /* @alternate */ background: linear-gradient(to bottom, HEADER_GRADIENT);
+  padding: PADDING;
+}
+
+.footer {
+  position: relative;
+}
+
+.bodyWrap {
+}

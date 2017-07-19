@@ -1,0 +1,174 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+    xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:core="urn:import:com.sencha.gxt.widget.core.client"
+    xmlns:chart="urn:import:com.sencha.gxt.chart.client.chart"
+    xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+    xmlns:epanel="urn:import:com.sencha.gxt.edash.client.widget.panel"
+    xmlns:view="urn:import:com.sencha.gxt.edash.client.view.impl"
+    xmlns:echart="urn:import:com.sencha.gxt.edash.client.widget.chart">
+
+  <ui:with field="margins" type="com.sencha.gxt.core.client.util.Margins">
+    <ui:attributes top="20" right="20" bottom="20" left="20"/>
+  </ui:with>
+
+  <ui:with field="bottomMargins" type="com.sencha.gxt.core.client.util.Margins">
+    <ui:attributes top="0" right="10" bottom="0" left="0"/>
+  </ui:with>
+
+  <ui:with field="northLayout"
+           type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData">
+    <ui:attributes size="100" collapsible="false"/>
+  </ui:with>
+
+  <ui:with field="southLayout"
+           type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData">
+    <ui:attributes size="250" collapsible="false" margins="{margins}"/>
+  </ui:with>
+
+  <ui:with field="centerData" type="com.sencha.gxt.widget.core.client.container.MarginData">
+    <ui:attributes margins="{margins}"/>
+  </ui:with>
+
+  <ui:with field="bottomLeftHLD"
+           type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData">
+    <ui:attributes width="280" height="1" margins="{bottomMargins}"/>
+  </ui:with>
+
+  <ui:with field="bottomRightHLD"
+           type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData">
+    <ui:attributes width="1" height="1"/>
+  </ui:with>
+
+  <ui:with field="hldHalf"
+           type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData">
+    <ui:attributes width="0.5" height="1"/>
+  </ui:with>
+
+  <ui:with field="vld" type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData">
+    <ui:attributes width="1" height="-1"/>
+  </ui:with>
+
+  <ui:style gss="true">
+    .grid {
+      padding: 0px 15px;
+    }
+
+    .kpiInStore, .kpiOnline {
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 19px;
+      color: #A0A7B8;
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .value {
+      text-align: right;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      display: block;
+      /*left: 10px;*/
+      margin-top: 2px;
+    }
+
+    .kpiInStore .indicator {
+      background-color: #2ac8ef;;
+    }
+
+    .kpiOnline .indicator {
+      background-color: #11c897;
+    }
+  </ui:style>
+
+
+  <container:BorderLayoutContainer>
+    <container:north layoutData="{northLayout}">
+      <core:ContentPanel headerVisible="false">
+        <view:KpiHeader/>
+      </core:ContentPanel>
+    </container:north>
+    <container:center layoutData="{centerData}">
+
+      <epanel:EdashDockPanel heading="CAMPAIGN PERFORMANCE">
+        <epanel:tool>
+          <button:ToggleButton ui:field="clicksButton" text="CLICKS" value="true"/>
+        </epanel:tool>
+        <epanel:tool>
+          <button:ToggleButton ui:field="wonButton" text="WON"/>
+        </epanel:tool>
+        <epanel:tool>
+          <button:ToggleButton ui:field="salesButton" text="SALES"/>
+        </epanel:tool>
+        <epanel:tool>
+          <button:ToggleButton ui:field="goalsButton" text="GOALS MET"/>
+        </epanel:tool>
+
+        <epanel:child layoutData="{centerData}">
+          <chart:Chart ui:field="performanceChart"/>
+        </epanel:child>
+      </epanel:EdashDockPanel>
+    </container:center>
+    <container:south layoutData="{southLayout}">
+
+      <container:HorizontalLayoutContainer>
+        <container:child layoutData="{bottomLeftHLD}">
+
+          <epanel:EdashDockPanel bodyBorder="false" heading="REDEMPTION">
+            <container:VerticalLayoutContainer>
+
+              <container:child layoutData="{vld}">
+                <container:HorizontalLayoutContainer height="143">
+                  <container:child layoutData="{hldHalf}">
+                    <echart:GaugeChart ui:field="inStoreChart"/>
+                  </container:child>
+                  <container:child layoutData="{hldHalf}">
+                    <echart:GaugeChart ui:field="onlineChart"/>
+                  </container:child>
+                </container:HorizontalLayoutContainer>
+              </container:child>
+
+              <container:child layoutData="{vld}">
+                <g:HTML>
+                  <table width="100%" cellspacing="0" cellpadding="0" class="{style.grid}">
+                    <tbody>
+                      <tr class="{style.kpiInStore}">
+                        <td class="{style.indicator}"></td>
+                        <td>IN STORE</td>
+                        <td class="{style.value}">1,024</td>
+                      </tr>
+                      <tr class="{style.kpiOnline}">
+                        <td class="{style.indicator}"></td>
+                        <td>ONLINE</td>
+                        <td class="{style.value}">20,678</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </g:HTML>
+              </container:child>
+
+
+            </container:VerticalLayoutContainer>
+          </epanel:EdashDockPanel>
+
+
+        </container:child>
+        <container:child layoutData="{bottomRightHLD}">
+
+          <epanel:EdashDockPanel bodyBorder="false" heading="STATISTICS">
+            <g:HTML ui:field="statisticsPanel"/>
+          </epanel:EdashDockPanel>
+
+        </container:child>
+      </container:HorizontalLayoutContainer>
+
+    </container:south>
+  </container:BorderLayoutContainer>
+
+</ui:UiBinder>

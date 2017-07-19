@@ -1,0 +1,23 @@
+
+.button {
+  background: none;
+  border: none;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+
+}
+
+.small {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #878ea2;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 25px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pressed * {
+  color: #ffffff !important;
+}

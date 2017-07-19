@@ -1,0 +1,16 @@
+
+.header {
+  padding: 0px;
+}
+
+.headerText,
+.header {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #878EA2;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 25px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+}

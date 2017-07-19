@@ -1,0 +1,18 @@
+
+.menuListItem {
+  line-height: 50px;
+}
+
+.menuItem {
+  color: #000000;
+  opacity: 0.5;
+  font-family: "Proxima Nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-left: 50px;
+}
+
+.menuItemIcon {
+  width: 40px !important;
+  height: 40px !important;
+  background-size: 50% !important;
+  background-position: left center !important;
+}

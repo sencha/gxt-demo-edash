@@ -1,0 +1,152 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+    xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:c="urn:import:com.sencha.gxt.widget.core.client.container"
+    xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+    xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+    xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+    xmlns:chart="urn:import:com.sencha.gxt.chart.client.chart"
+    xmlns:impl="urn:import:com.sencha.gxt.edash.client.view.impl">
+
+
+  <ui:with field="margins" type="com.sencha.gxt.core.client.util.Margins">
+    <ui:attributes top="20" right="20" bottom="20" left="20"/>
+  </ui:with>
+
+  <ui:with field="marginData" type="com.sencha.gxt.widget.core.client.container.MarginData">
+    <ui:attributes margins="{margins}"/>
+  </ui:with>
+
+  <ui:with field="vld" type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData">
+    <ui:attributes width="1" height="-1" margins="{margins}"/>
+  </ui:with>
+
+  <ui:with field="hld"
+           type="com.sencha.gxt.widget.core.client.container.HorizontalLayoutContainer.HorizontalLayoutData">
+    <ui:attributes width="0.20" height="1"/>
+  </ui:with>
+
+  <ui:with field="northData" type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData">
+    <ui:attributes size="95"/>
+  </ui:with>
+
+  <ui:style gss="true">
+    .body {
+      background: #ECECEC;
+      border-color: #CECECE;
+      color: #3E4752;
+      font-size: 15px;
+      font-weight: 300;
+      font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      border-width: 1px;
+      border-style: solid;
+      line-height: 19px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .topPanel {
+      border-radius: 3px;
+      -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .chartWrap {
+
+    }
+
+    .title, .title label {
+      color: #A0A7B8 !important;
+      font-size: 10px !important;
+      font-weight: 800 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .title {
+      font-size: 12px !important;
+      padding-left: 3px !important;
+    }
+
+    .value {
+      height: 32px;
+      font: 300 15px/17px "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #3E4752;
+      font-size: 18px;
+    }
+
+  </ui:style>
+
+  <c:VerticalLayoutContainer scrollMode="AUTOY" addStyleNames="{style.body}">
+    <c:child layoutData="{vld}">
+      <gxt:ContentPanel headerVisible="false" height="425" borders="false" addStyleNames="{style.topPanel}">
+        <c:BorderLayoutContainer>
+          <c:north layoutData="{northData}">
+            <gxt:ContentPanel headerVisible="false">
+              <gxt:child layoutData="{marginData}">
+                <c:HorizontalLayoutContainer>
+                  <c:child layoutData="{hld}">
+                    <c:VerticalLayoutContainer>
+                      <c:child>
+                        <button:SplitButton ui:field="companyButton" />
+                      </c:child>
+                      <c:child>
+                        <g:Label ui:field="companyNameLabel" addStyleNames="{style.title}"/>
+                      </c:child>
+                    </c:VerticalLayoutContainer>
+                  </c:child>
+
+                  <c:child layoutData="{hld}">
+                    <form:FieldLabel text="CHANGE" labelAlign="TOP" addStyleNames="{style.title}">
+                      <form:widget>
+                        <g:Label ui:field="changeLabel" addStyleNames="{style.value}"/>
+                      </form:widget>
+                    </form:FieldLabel>
+                  </c:child>
+
+                  <c:child layoutData="{hld}">
+                    <form:FieldLabel text="PRICE" labelAlign="TOP" addStyleNames="{style.title}">
+                      <form:widget>
+                        <g:Label ui:field="priceLabel" addStyleNames="{style.value}"/>
+                      </form:widget>
+                    </form:FieldLabel>
+                  </c:child>
+
+                  <c:child layoutData="{hld}">
+                    <form:FieldLabel text="MAX/MIN" labelAlign="TOP" addStyleNames="{style.title}">
+                      <form:widget>
+                        <g:Label ui:field="maxminLabel" addStyleNames="{style.value}"/>
+                      </form:widget>
+                    </form:FieldLabel>
+                  </c:child>
+
+                  <c:child layoutData="{hld}">
+                    <form:FieldLabel text="VOLUME" labelAlign="TOP" addStyleNames="{style.title}">
+                      <form:widget>
+                        <g:Label ui:field="volumeLabel" addStyleNames="{style.value}"/>
+                      </form:widget>
+                    </form:FieldLabel>
+                  </c:child>
+                </c:HorizontalLayoutContainer>
+              </gxt:child>
+            </gxt:ContentPanel>
+          </c:north>
+          <c:center>
+            <gxt:ContentPanel bodyBorder="false" headerVisible="false" addStyleNames="{style.chartWrap}">
+              <gxt:child layoutData="{marginData}">
+                <chart:Chart ui:field="candleStickChart"/>
+              </gxt:child>
+            </gxt:ContentPanel>
+          </c:center>
+        </c:BorderLayoutContainer>
+      </gxt:ContentPanel>
+    </c:child>
+
+    <c:child layoutData="{vld}">
+      <impl:StatementsContainer ui:field="statementsContainer" />
+    </c:child>
+  </c:VerticalLayoutContainer>
+
+</ui:UiBinder>

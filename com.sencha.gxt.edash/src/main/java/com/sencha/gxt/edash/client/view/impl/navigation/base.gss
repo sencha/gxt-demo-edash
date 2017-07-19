@@ -1,0 +1,160 @@
+.navigation {
+  background-color: #3E4752 !important;
+}
+
+.logo {
+  gwt-sprite: "logo";
+  display: table-cell;
+  padding-right: 16px;
+  vertical-align: middle;
+  background-position: center center;
+}
+
+.banner {
+  background-color: #F1495B;
+}
+
+.bannerInner {
+  right: auto;
+  left: 36px;
+  top: 26px;
+  margin: 0px;
+  width: 160px;
+  position: absolute;
+}
+
+.bannerText {
+  vertical-align: middle;
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 48px;
+
+  display: table-cell;
+  white-space: nowrap;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.menuItem {
+  opacity: 0.5;
+}
+
+.menuItem > span {
+  padding-left: 50px;
+  vertical-align: middle;
+  padding-top: 5px;
+  font-weight: 300;
+}
+
+.menuIcon {
+  opacity: 0.5;
+}
+
+.menuItem img {
+  background-size: 70% !important;
+  margin: 5px;
+  background-position: center center;
+}
+
+.menuIcon:after {
+  content: '';
+  position: absolute;
+  gwt-sprite: "disclosure";
+  background-size: 70%;
+  background-position: center center;
+  top: 30px;
+  left: 44px;
+}
+
+.menuIcon:hover {
+  background-color: #282E35 !important;
+  opacity: 1;
+}
+
+.itemWrap {
+  height: 68px;
+  cursor: pointer;
+  vertical-align: middle;
+  background-color: #3E4752;
+  color: white;
+
+}
+
+.itemOver {
+  background-color: #373F49;
+}
+
+.itemSelected {
+  background-color: #313841;
+
+}
+
+.itemWrap > span {
+  opacity: 0.5 !important;
+}
+
+.itemOver > span {
+  opacity: 0.8 !important;
+}
+
+.itemSelected > span {
+  opacity: 1 !important;
+}
+
+/* icons for navigation */
+.tabWrap {
+  display: table;
+  height: 68px;
+  padding-left: 20px;
+}
+
+.tabButtonNavigation {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  height: 20px;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+.text {
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.kpiIcon {
+  gwt-sprite: "navKpi";
+}
+
+.performanceIcon {
+  gwt-sprite: "navPerformance";
+}
+
+.profitLossIcon {
+  gwt-sprite: "navProfit";
+}
+
+.newsIcon {
+  gwt-sprite: "navNews";
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  background-position: center center;
+  vertical-align: middle;
+  line-height: 20px;
+  background-size: contain;
+}

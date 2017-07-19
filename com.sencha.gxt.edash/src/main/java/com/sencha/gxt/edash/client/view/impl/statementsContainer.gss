@@ -1,0 +1,59 @@
+.outerWrap {
+  margin-bottom: 30px;
+}
+
+.statementType {
+  width: 100%;
+  color: #878EA2;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 20px 5px 0;
+}
+
+.wrap {
+  padding: 5px;
+  display: table;
+  width: 98%;
+}
+
+.inner {
+  display: table-cell;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.thumbIcon {
+  gwt-sprite: "pdf";
+  background-size: contain;
+  margin-right: 5px;
+  float: left;
+}
+
+.thumbTitleContainer {
+  float: left;
+  padding-top: 4px;
+}
+
+.thumbTitle {
+  color: #3E4752;
+  font-weight: 800;
+}
+
+.thumbTitleSmall {
+  color: #878EA2;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.thumbDownload {
+  gwt-sprite: "download";
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  opacity: .5;
+  float: right;
+}

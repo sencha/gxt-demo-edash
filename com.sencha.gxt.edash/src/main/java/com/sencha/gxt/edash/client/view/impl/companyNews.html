@@ -1,0 +1,20 @@
+
+<div class="{style.textWrapper}">
+  <div class="{style.icon} {news.type}">&nbsp;</div>
+    <div class="{style.newsData}">
+
+      <div class="{style.newsPicture}"><img src="resources/icons/{news.photo}"></div>
+      <div class="{style.newsContent}">
+        <div class="{style.newsTitle}">{news.title}</div>
+        <div class="{style.newsSmall}">by <span class="{style.newsAuthor}">{news.author} </span> <div class="{style.calenderIcon}"></div> {news.date}<div
+            class="{style.clockIcon}"></div> {news.time}</div>
+        <div class="{style.newsParagraph} news-paragraph-simple">{news.paragraph:shorten(150)}</div>
+        <div class="{style.newsParagraphFull}">{news.paragraph}</div>
+        <div class="{style.newsToggle}"><span class="{style.expander}">EXPAND&nbsp;</span><div class="{style.expandIcon}"></div></div>
+        <div class="{style.newsToggleCollapse}"><span class="{style.collapser}">COLLAPSE&nbsp;</span><div class="{style.collapseIcon}"></div></div>
+      </div>
+
+    </div>
+
+  <div></div>
+</div>

@@ -1,0 +1,38 @@
+@def BACKGROUND_COLOR value('theme.panel.backgroundColor');
+@def BORDER_COLOR value('theme.panel.border.color');
+@def BORDER_STYLE value('theme.panel.border.style');
+@def BORDER_WIDTH value('theme.panel.border.toString');
+
+.panel {
+  outline: 0 none;
+  border-style: BORDER_STYLE;
+  border-width: BORDER_WIDTH;
+  border-color: BORDER_COLOR;
+}
+
+.body {
+  background-color: BACKGROUND_COLOR;
+  border: none;
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.247059);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.247059);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.247059);
+}
+
+.header {
+  position: relative;
+  background: none;
+  padding: 0px;
+  height: 40px;
+}
+
+.footer {
+  position: relative;
+}
+
+.bodyWrap {
+  padding: 0 5px 5px 0;
+}

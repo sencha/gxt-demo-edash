@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.sencha.gxt</groupId>
+  <artifactId>gxt-edash-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>Sencha GXT Executive Dashboard Demo Parent</name>
+  <packaging>pom</packaging>
+  
+  <properties>
+    <gxt.version>4.0.2</gxt.version>
+  
+    <!-- Global build settings -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Global build versions -->
+    <java.version>1.7</java.version>
+    <gwt.version>2.7.0</gwt.version>
+    <gwt.plugin.version>2.7.0</gwt.plugin.version>
+    <phantomjs.version>2.1.1</phantomjs.version>
+
+    <!-- Global GWT compiler settings -->
+    <gwt.compiler.strict>true</gwt.compiler.strict>
+
+    <!-- Global GWT test settings -->
+    <gwt.test.mode>htmlunit</gwt.test.mode>
+    <gwt.test.htmlunit>FF17</gwt.test.htmlunit>
+    <gwt.test.testTimeOut>480</gwt.test.testTimeOut>
+    <gwt.test.prod>true</gwt.test.prod>
+    <gwt.testMethodTimeout>15</gwt.testMethodTimeout>
+  </properties>
+  
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.5.1</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>gwt-maven-plugin</artifactId>
+          <version>${gwt.plugin.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.google.gwt</groupId>
+              <artifactId>gwt-user</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>com.google.gwt</groupId>
+              <artifactId>gwt-dev</artifactId>
+              <version>${gwt.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <modules>
+    <module>com.sencha.gxt.theme.edash</module>
+    <module>com.sencha.gxt.edash</module>
+    <module>build</module>
+  </modules>
+  
+  <repositories>
+    <repository>
+      <id>sencha-gxt-repository</id>
+      <url>https://maven.sencha.com/repo/gxt-support-commercial-release</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sencha-gxt-repository</id>
+      <url>https://maven.sencha.com/repo/gxt-support-commercial-release</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <profiles>
+    <profile>
+      <!-- Minimal build for use when running in SuperDevMode -->
+      <id>sdm-build</id>
+      <modules>
+        <module>com.sencha.gxt.theme.edash</module>
+        <module>com.sencha.gxt.edash</module>
+     </modules>
+      <properties>
+        <gwt.compiler.skip>true</gwt.compiler.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <skipTests>true</skipTests>
+      </properties>
+    </profile>
+  </profiles>
+</project>

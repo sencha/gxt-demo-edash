@@ -1,0 +1,6 @@
+
+.chart text {
+  font-family: Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 300 !important;
+}

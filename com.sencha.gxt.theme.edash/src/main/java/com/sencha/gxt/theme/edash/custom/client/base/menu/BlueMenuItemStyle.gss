@@ -1,0 +1,76 @@
+@def ITEM_PADDING 0;
+
+@def TEXT_COLOR #ffffff;
+@def TEXT_FAMILY "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@def TEXT_SIZE 15px;
+@def TEXT_WEIGHT 500;
+@def ITEM_LINE_HEIGHT 31px;
+
+@def ACTIVE_BACKGROUND_COLOR #282E35;
+
+@def ACTIVE_TEXT_COLOR #ffffff;
+@def ACTIVE_TEXT_FAMILY "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@def ACTIVE_TEXT_SIZE 15px;
+@def ACTIVE_TEXT_WEIGHT 500;
+
+@if (is("gecko") || is("gecko1_8")) {
+  .menuItem {
+    outline-color: -moz-use-text-color;
+  }
+}
+
+.menuItem {
+  display: block;
+  outline-style: none;
+  outline-width: 0;
+  padding: 0 15px 0 65px;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+
+  font-size: TEXT_SIZE;
+  font-family: TEXT_FAMILY;
+  font-weight: TEXT_WEIGHT;
+  color: TEXT_COLOR;
+  line-height: 50px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.menuListItem {
+  white-space: nowrap;
+  display: block;
+  padding: 0;
+  margin: ITEM_PADDING;
+  cursor: pointer;
+
+}
+
+.menuItemIcon {
+  border: 0 none;
+  padding: 0;
+  vertical-align: top;
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  margin: 0;
+  height: 40px !important;
+  width: 40px !important;
+  background-position: left center !important;
+  background-size: 50% !important;
+}
+
+@if (is("ie8") || is("ie9")) {
+  .menuItemIcon {
+    vertical-align: middle;
+  }
+}
+
+.menuItemArrow {
+}
+
+.active {
+  background-color: ACTIVE_BACKGROUND_COLOR;
+  padding: 0 !important; /*removes padding set by .menuListItem that we use in the border here*/
+}

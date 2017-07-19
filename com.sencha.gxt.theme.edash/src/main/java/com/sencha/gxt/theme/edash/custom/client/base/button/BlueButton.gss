@@ -1,0 +1,8 @@
+
+.button, .buttonInner {
+  text-align: left !important;
+  background-size: 10% !important;
+  padding-right: 12px !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

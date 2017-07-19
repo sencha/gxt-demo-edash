@@ -1,0 +1,23 @@
+
+.button {
+  border: none;
+  background: none !important;
+  background-color: #FFF !important;
+  padding-left: 0px;
+}
+
+.buttonInner {
+  background-position: right center;
+  width: auto;
+  height: auto;
+
+  font: 800 12px/20px "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 30px;
+  max-width: 100%;
+  padding-left: 0px;
+
+  color: #3E4752 !important;
+  font-size: 28px !important;
+  line-height: 28px;
+  font-weight: 500;
+}

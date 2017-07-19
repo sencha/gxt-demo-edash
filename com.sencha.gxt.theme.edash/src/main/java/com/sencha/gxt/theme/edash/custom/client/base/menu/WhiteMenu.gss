@@ -1,0 +1,7 @@
+
+.menu {
+  -webkit-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.35);
+  background: white !important;
+}

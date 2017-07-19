@@ -1,0 +1,26 @@
+.grid {
+  height: 100px;
+
+  padding-bottom: 7px;
+  white-space: nowrap;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #A0A7B8;
+  font-weight: 800;
+  font-size: 10px;
+}
+
+.cell {
+  text-align: center;
+  vertical-align: middle;
+  border-right: 1px solid #ECECEC;
+}
+
+.value {
+  display: block;
+  font-size: 28px;
+  color: #878EA2;
+  font-weight: 500;
+}

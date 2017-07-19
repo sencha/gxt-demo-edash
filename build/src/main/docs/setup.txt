@@ -1,0 +1,7 @@
+The fastest way to get started with GXT is to see the Sencha GXT Getting Started guide at:
+
+${link.gettingStarted}
+
+More GXT documentation and other guides are also available at:
+
+${link.documentation}

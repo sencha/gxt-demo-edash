@@ -1,0 +1,8 @@
+<div class="{style.statisticsHeader}">Current Campaigns</div>
+<tpl for="items">
+  <div class="{style.statisticTag} {status}">{status}</div>
+  <div class="{style.statisticDescription}">{description}</div>
+  <div class="{style.sparkline}">
+    <div class="{style.sparklineInner} {status}" style="width: {[ratio * 100]}%;"></div>
+  </div>
+</tpl>

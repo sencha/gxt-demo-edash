@@ -1,0 +1,176 @@
+@external news, forum;
+
+.view {
+  gwt-sprite: "lineBackground";
+  background-position: 22px 30px;
+  background-repeat: repeat-y;
+  background-size: 9px 9px;
+  background-color: #ececec !important;
+  overflow: auto;
+}
+
+.view:before {
+  background-color: #ececec;
+  content: "";
+  height: 20px;
+  position: absolute;
+  width: 50px;
+}
+
+.cell {
+  margin-right: 20px;
+  overflow: visible;
+  padding: 0;
+}
+
+.textWrapper {
+  overflow: visible;
+  position: relative;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: "Proxima Nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-left: 10px;
+}
+
+.newsData {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+  margin: 0 0 8px 45px;
+  padding: 15px;
+}
+
+.newsToggle {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.newsToggleCollapse {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.newsToggle span, .newsToggleCollapse span {
+  color: #2e6eaf;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100px;
+}
+
+.newsTitle {
+  color: #3e4752;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.newsSmall {
+  color: #878ea2;
+  font-size: 10px;
+}
+
+.newsSmall .calenderIcon, .newsSmall .clockIcon {
+  margin: 0 5px 0 10px;
+}
+
+.newsParagraph {
+  background-color: white;
+  font-weight: 400;
+  margin-top: 20px;
+  min-height: 20px;
+  overflow: hidden;
+  color: #878ea2;
+  font-size: 15px;
+}
+
+.newsParagraphFull {
+  background-color: white;
+  font-weight: 400;
+  margin-top: 20px;
+  min-height: 20px;
+  overflow: hidden;
+  color: #878ea2;
+  font-size: 15px;
+  display: none;
+}
+
+.newsToggleCollapse {
+  display: none;
+}
+
+.expanded .newsParagraphFull, .expanded .newsToggleCollapse {
+  display: block;
+}
+
+.expanded .newsParagraph, .expanded .newsToggle {
+  display: none;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 35px;
+  left: 0;
+  margin-top: 15px;
+  position: absolute;
+  top: 0;
+  width: 35px;
+}
+
+.newsPicture {
+  background-color: #ececec;
+  border-radius: 3px;
+  float: left;
+  height: 35px;
+  overflow: hidden;
+  width: 35px;
+}
+
+.newsPicture img {
+  width: 35px;
+}
+
+.newsContent {
+  margin-left: 50px;
+}
+
+.newsAuthor {
+  text-transform: uppercase;
+}
+
+.calenderIcon {
+  gwt-sprite: "calenderIcon";
+  display: inline-block;
+}
+
+.clockIcon {
+  gwt-sprite: "clockIcon";
+  display: inline-block;
+}
+
+.expandIcon {
+  gwt-sprite: "expandIcon";
+  display: inline-block;
+  cursor: pointer;
+}
+
+.collapseIcon {
+  gwt-sprite: "collapseIcon";
+  display: inline-block;
+  cursor: pointer;
+}
+
+.forum {
+  gwt-sprite: "forumIcon";
+
+}
+
+.news {
+  gwt-sprite: "newsIcon";
+}
+
+.expander, .collapser {
+  padding: 1px 0px;
+}

@@ -1,0 +1,18 @@
+.grid * {
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.leftGrid {
+  border-right: 1px solid black !important;
+}
+
+.leftGrid > div:nth-child(2) {
+  overflow: hidden;
+  overflow-x: scroll !important;
+}
+
+.rightGrid > div:nth-child(2) * {
+  background-image: none !important;
+}
