@@ -16,14 +16,6 @@
       <filtered>true</filtered>
     </file>
     <file>
-      <source>src/main/docs/license/license_${license}.txt</source>
-      <filtered>true</filtered>
-    </file>
-    <file>
-      <source>src/main/docs/license/license_thirdparty.md</source>
-      <filtered>true</filtered>
-    </file>
-    <file>
       <source>src/main/docs/setup.txt</source>
       <filtered>true</filtered>
     </file>
