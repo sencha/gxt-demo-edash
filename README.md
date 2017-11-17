@@ -1,5 +1,11 @@
 # GXT Executive Dashboard Demo
-Example GXT 4.0 Application using GXT theming.
+Example GXT 4.0 application using the theme builder to build a theme.
+
+<div style='display: flex'>
+	<img src='theapp0.png' />
+	<img src='theapp1.png' style='width: 300px;' />
+	<img src='theapp2.png' style='width: 300px;' />
+</div>
 
 ## Demo
 
