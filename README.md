@@ -5,6 +5,11 @@ Example GXT 4.0 application using the theme builder to build a theme.
 | ---- | ---- | ---- | 
 | <img src='theapp0.png' width='200px' /> | <img src='theapp1.png' width='200px' /> | <img src='theapp2.png' width='200px' /> |
 
+## GXT 
+
+* [Sencha GXT Product Info](https://www.sencha.com/products/gxt/)
+* [GXT Guides](http://docs.sencha.com/gxt/4.x/)
+
 ## Demo
 
 * [Dashboard Demo](http://examples.sencha.com/gxt-edash/)
