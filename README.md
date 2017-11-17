@@ -3,10 +3,10 @@ Example GXT 4.0 Application using GXT theming.
 
 ## Demo
 
-* [Dashboard Demo](http://examples.sencha.com/gxt-edash/4.0.0/)
+* [Dashboard Demo](http://examples.sencha.com/gxt-edash/)
 
 ## Requirements
-This project depends on GXT 4.0.2. 
+This project depends on the latest release of GXT. 
 
 ## Project setup
 * Run `mvn install` to initialize project and custom theme. 
