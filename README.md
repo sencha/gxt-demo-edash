@@ -1,13 +1,9 @@
 # GXT Executive Dashboard Demo
 Example GXT 4.0 application using the theme builder to build a theme.
 
-{::nomarkdown}
-<div style='display: flex'>
-	<img src='theapp0.png' />
-	<img src='theapp1.png' width='200px' />
-	<img src='theapp2.png' width='200px' />
-</div>
-{:/}
+| | | |
+| ---- | ---- | ---- | 
+| <img src='theapp0.png' width='200px' /> | <img src='theapp1.png' width='200px' /> | <img src='theapp2.png' width='200px' /> |
 
 ## Demo
 
