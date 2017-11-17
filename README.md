@@ -3,7 +3,7 @@ Example GXT 4.0 application using the theme builder to build a theme.
 
 | | | |
 | ---- | ---- | ---- | 
-| <img src='theapp0.png' width='200px' /> | <img src='theapp1.png' width='200px' /> | <img src='theapp2.png' width='200px' /> |
+| <img src='theapp0.png' width='200px' /> | <img src='theapp1.png' width='200px' /> | <img src='theapp2.png' height='200px' /> |
 
 ## GXT 
 
