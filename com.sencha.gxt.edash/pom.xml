@@ -12,66 +12,24 @@
   <name>Sencha GXT Executive Dashboard Demo</name>
   
   <properties>
-    <build.description>development build</build.description>
+    <!-- App Engine ID -->
+    <app.deploy.project>sencha-gxt-demos</app.deploy.project>
+    <app.deploy.version>edash</app.deploy.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+    <archiveClasses>true</archiveClasses>
+  
+    <build.description>GXT edash example</build.description>
     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
   </properties>
   
-  <dependencies>
-    <dependency>
-      <groupId>com.sencha.gxt</groupId>
-      <artifactId>gxt-theme-edash</artifactId>
-      <version>${project.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>xerces</groupId>
-            <artifactId>xercesImpl</artifactId>
-          </exclusion>
-        </exclusions>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-user</artifactId>
-      <version>${gwt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-dev</artifactId>
-      <version>${gwt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-servlet</artifactId>
-      <version>${gwt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt.inject</groupId>
-      <artifactId>gin</artifactId>
-      <version>1.5.0</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.sencha.gxt</groupId>
-      <artifactId>gxt</artifactId>
-      <version>${gxt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.sencha.gxt</groupId>
-      <artifactId>gxt-chart</artifactId>
-      <version>${gxt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.sencha.gxt</groupId>
-      <artifactId>gxt-theme-neptune</artifactId>
-      <version>${gxt.version}</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
+  <prerequisites>
+    <maven>3.5</maven>
+  </prerequisites>
   
   <build>
     <resources>
@@ -157,18 +115,15 @@
         </executions>
       </plugin>
       
-      <!-- App Engine -->
-      <!-- upload: mvn appengine:update -->
-      <!-- web server start: mvn appengine:devserver_start -->
-      <!-- web server stop: mvn appengine:devserver_stop -->
+      <!-- App Engine Hosting -->
+      <!-- https://cloud.google.com/appengine/docs/standard/java/tools/using-maven -->
       <plugin>
-        <groupId>com.google.appengine</groupId>
+        <groupId>com.google.cloud.tools</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
-        <version>1.9.19</version>
+        <version>1.3.2</version>
         <configuration>
-          <enableJarClasses>false</enableJarClasses>
-          <port>8888</port>
-          <address>0.0.0.0</address>
+          <devserver.host>0.0.0.0</devserver.host>
+          <devserver.port>8181</devserver.port>
         </configuration>
       </plugin>
     </plugins>
@@ -209,4 +164,61 @@
       </plugins>
     </pluginManagement>
   </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt-theme-edash</artifactId>
+      <version>${project.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+          </exclusion>
+        </exclusions>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-user</artifactId>
+      <version>${gwt.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-dev</artifactId>
+      <version>${gwt.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-servlet</artifactId>
+      <version>${gwt.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.inject</groupId>
+      <artifactId>gin</artifactId>
+      <version>1.5.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt</artifactId>
+      <version>${gxt.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt-chart</artifactId>
+      <version>${gxt.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sencha.gxt</groupId>
+      <artifactId>gxt-theme-neptune</artifactId>
+      <version>${gxt.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>

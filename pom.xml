@@ -43,6 +43,7 @@
             <target>${java.version}</target>
           </configuration>
         </plugin>
+        
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
@@ -60,7 +61,6 @@
             </dependency>
           </dependencies>
         </plugin>
-
       </plugins>
     </pluginManagement>
   </build>
