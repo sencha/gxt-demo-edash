@@ -40,14 +40,26 @@
 
   <build>
     <resources>
+       <!-- Include the module descriptors in overrides -->
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**</include>
+        </includes>
+      </resource>
       <resource>
         <directory>src/main/resources</directory>
       </resource>
+      <!-- Theme file resources, icons -->
       <resource>
-        <directory>src/main/java</directory>
+        <directory>src/main/files</directory>
       </resource>
+      <!-- Generated theme source -->
       <resource>
         <directory>${theme.gen.directory}</directory>
+        <includes>
+          <include>**</include>
+        </includes>
       </resource>
     </resources>
 
@@ -165,6 +177,50 @@
           </excludes>
         </configuration>
       </plugin>
+      
+      <!-- Add the target/theme-gen to be included as a sourcepath -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.9.1</version>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${theme.gen.directory}</source>
+              </sources>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>add-resource</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>add-resource</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${theme.gen.directory}</directory>
+                  <includes>
+                    <include>**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- License addition -->
+      <plugin>
+        <groupId>com.google.code.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+      </plugin>
     </plugins>
 
     <pluginManagement>
@@ -258,7 +314,13 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore></ignore>
+                    <execute>
+                      <!-- run on maven update -->
+                      <!-- <runOnConfiguration>true</runOnConfiguration> -->
+                      <!-- run on workspace build -->
+                      <runOnConfiguration>true</runOnConfiguration>
+                      <runOnIncremental>true</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
