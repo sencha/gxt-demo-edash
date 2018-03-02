@@ -89,7 +89,7 @@
             </resource>
             <resource>
               <targetPath>META-INF</targetPath>
-              <directory>${project.basedir}/../build/src/main/docs/license</directory>
+              <directory>${basedir}/build/src/main/docs/license</directory>
               <filtering>true</filtering>
               <includes>
                 <include>license_${license}.txt</include>
