@@ -1,4 +1,45 @@
+/**
+ * Sencha GXT 1.0.0-SNAPSHOT - Sencha for GWT
+ * Copyright (c) 2006-2018, Sencha Inc.
+ *
+ * licensing@sencha.com
+ * http://www.sencha.com/products/gxt/license/
+ *
+ * ================================================================================
+ * Commercial License
+ * ================================================================================
+ * This version of Sencha GXT is licensed commercially and is the appropriate
+ * option for the vast majority of use cases.
+ *
+ * Please see the Sencha GXT Licensing page at:
+ * http://www.sencha.com/products/gxt/license/
+ *
+ * For clarification or additional options, please contact:
+ * licensing@sencha.com
+ * ================================================================================
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * ================================================================================
+ * Disclaimer
+ * ================================================================================
+ * THIS SOFTWARE IS DISTRIBUTED "AS-IS" WITHOUT ANY WARRANTIES, CONDITIONS AND
+ * REPRESENTATIONS WHETHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE
+ * IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, MERCHANTABLE QUALITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, DURABILITY, NON-INFRINGEMENT, PERFORMANCE AND
+ * THOSE ARISING BY STATUTE OR FROM CUSTOM OR USAGE OF TRADE OR COURSE OF DEALING.
+ * ================================================================================
+ */
 package com.sencha.gxt.edash.client.view.impl;
+
+import java.util.List;
+
+import javax.inject.Inject;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.NativeEvent;
@@ -44,11 +85,7 @@ import com.sencha.gxt.widget.core.client.menu.CheckMenuItem;
 import com.sencha.gxt.widget.core.client.menu.Menu;
 import com.sencha.gxt.widget.core.client.toolbar.ToolBar;
 
-import javax.inject.Inject;
-import java.util.List;
-
 public class CompanyNewsViewImpl implements CompanyNewsView {
-
 
   @XTemplates.FormatterFactories(@XTemplates.FormatterFactory(factory = ShortenFactory.class, name = "shorten"))
   interface Renderer extends XTemplates {
@@ -193,25 +230,23 @@ public class CompanyNewsViewImpl implements CompanyNewsView {
 
     container = new BorderLayoutContainer();
 
-
     ContentPanel north = new ContentPanel();
     north.setBodyStyle("backgroundColor: #ececec");
     north.setHeaderVisible(false);
     VerticalLayoutContainer con = new VerticalLayoutContainer();
     con.add(createToolbar(), new VerticalLayoutContainer.VerticalLayoutData(1, -1, new Margins(15)));
 
-
     north.add(con);
     BorderLayoutData northLayout = new BorderLayoutData(75);
     container.setNorthWidget(north, northLayout);
-
 
     ContentPanel center = new ContentPanel();
     center.setHeaderVisible(false);
 
     ListViewNewsAppearance appearance = new ListViewNewsAppearance();
 
-    final ListView<News, News> listView = new ListView<News, News>(store, new IdentityValueProvider<News>(), appearance);
+    final ListView<News, News> listView = new ListView<News, News>(store, new IdentityValueProvider<News>(),
+        appearance);
     listView.addStyleName(style.view());
     listView.setBorders(false);
     listView.setCell(new SimpleSafeHtmlCell<News>(new AbstractSafeHtmlRenderer<News>() {
@@ -251,29 +286,29 @@ public class CompanyNewsViewImpl implements CompanyNewsView {
   @Override
   public void setFilter(CompanyNewsPlace.NewsFilter newsFilter) {
     switch (newsFilter) {
-      case ALL_POSTS:
-        postsButton.setText("All Posts");
-        all.setChecked(true, true);
-        news.setChecked(false, true);
-        forums.setChecked(false, true);
-        store.removeFilters();
-        break;
-      case NEWS:
-        postsButton.setText("News");
-        all.setChecked(false, true);
-        news.setChecked(true, true);
-        forums.setChecked(false, true);
-        store.addFilter(filter);
-        store.setEnableFilters(true);
-        break;
-      case FORUM:
-        postsButton.setText("Forum");
-        all.setChecked(false, true);
-        news.setChecked(false, true);
-        forums.setChecked(true, true);
-        store.addFilter(filter);
-        store.setEnableFilters(true);
-        break;
+    case ALL_POSTS:
+      postsButton.setText("All Posts");
+      all.setChecked(true, true);
+      news.setChecked(false, true);
+      forums.setChecked(false, true);
+      store.removeFilters();
+      break;
+    case NEWS:
+      postsButton.setText("News");
+      all.setChecked(false, true);
+      news.setChecked(true, true);
+      forums.setChecked(false, true);
+      store.addFilter(filter);
+      store.setEnableFilters(true);
+      break;
+    case FORUM:
+      postsButton.setText("Forum");
+      all.setChecked(false, true);
+      news.setChecked(false, true);
+      forums.setChecked(true, true);
+      store.addFilter(filter);
+      store.setEnableFilters(true);
+      break;
     }
   }
 
@@ -301,19 +336,20 @@ public class CompanyNewsViewImpl implements CompanyNewsView {
   private final class ListViewNewsAppearance extends ListViewCustomAppearance<News> {
 
     public ListViewNewsAppearance() {
-      super("." + resources.style().cell());
+      super("." + CompanyNewsViewImpl.this.resources.style().cell());
     }
 
     @Override
     public void renderItem(SafeHtmlBuilder builder, SafeHtml content) {
-      builder.appendHtmlConstant("<div class='" + resources.style().cell() + "'>");
+      builder.appendHtmlConstant("<div class='" + CompanyNewsViewImpl.this.resources.style().cell() + "'>");
       builder.append(content);
       builder.appendHtmlConstant("</div>");
     }
 
     @Override
     public void renderEnd(SafeHtmlBuilder builder) {
-      String markup = new StringBuilder("<div class=\"").append(CommonStyles.get().clear()).append("\"></div>").toString();
+      String markup = new StringBuilder("<div class=\"").append(CommonStyles.get().clear()).append("\"></div>")
+          .toString();
       builder.appendHtmlConstant(markup);
     }
   }
@@ -345,7 +381,6 @@ public class CompanyNewsViewImpl implements CompanyNewsView {
     postsMenu.add(news);
     postsMenu.add(forums);
     postsButton.setMenu(postsMenu);
-
 
     toolBar.add(postsButton);
 

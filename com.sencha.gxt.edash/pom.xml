@@ -126,6 +126,12 @@
           <devserver.port>8181</devserver.port>
         </configuration>
       </plugin>
+      
+      <!-- License addition -->
+      <plugin>
+        <groupId>com.google.code.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+      </plugin>
     </plugins>
 
     <pluginManagement>

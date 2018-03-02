@@ -1,4 +1,43 @@
+/**
+ * Sencha GXT 1.0.0-SNAPSHOT - Sencha for GWT
+ * Copyright (c) 2006-2018, Sencha Inc.
+ *
+ * licensing@sencha.com
+ * http://www.sencha.com/products/gxt/license/
+ *
+ * ================================================================================
+ * Commercial License
+ * ================================================================================
+ * This version of Sencha GXT is licensed commercially and is the appropriate
+ * option for the vast majority of use cases.
+ *
+ * Please see the Sencha GXT Licensing page at:
+ * http://www.sencha.com/products/gxt/license/
+ *
+ * For clarification or additional options, please contact:
+ * licensing@sencha.com
+ * ================================================================================
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * ================================================================================
+ * Disclaimer
+ * ================================================================================
+ * THIS SOFTWARE IS DISTRIBUTED "AS-IS" WITHOUT ANY WARRANTIES, CONDITIONS AND
+ * REPRESENTATIONS WHETHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE
+ * IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY, MERCHANTABLE QUALITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, DURABILITY, NON-INFRINGEMENT, PERFORMANCE AND
+ * THOSE ARISING BY STATUTE OR FROM CUSTOM OR USAGE OF TRADE OR COURSE OF DEALING.
+ * ================================================================================
+ */
 package com.sencha.gxt.edash.client.view.impl.navigation;
+
+import javax.inject.Inject;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
@@ -28,8 +67,6 @@ import com.sencha.gxt.theme.base.client.listview.ListViewCustomAppearance;
 import com.sencha.gxt.widget.core.client.ListView;
 import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer;
 import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData;
-
-import javax.inject.Inject;
 
 public class SideNavigation extends BaseNavigation implements PlaceChangeEvent.Handler {
 
@@ -114,7 +151,6 @@ public class SideNavigation extends BaseNavigation implements PlaceChangeEvent.H
       final Renderer r = GWT.create(Renderer.class);
 
       ListViewCustomAppearance<Navigation> appearance = new ListViewCustomAppearance<Navigation>("." + resources.style().itemWrap(), resources.style().itemOver(), resources.style().itemSelected()) {
-
         @Override
         public void renderEnd(SafeHtmlBuilder builder) {
           String markup = new StringBuilder("<div class=\"").append(CommonStyles.get().clear()).append("\"></div>").toString();
@@ -123,7 +159,7 @@ public class SideNavigation extends BaseNavigation implements PlaceChangeEvent.H
 
         @Override
         public void renderItem(SafeHtmlBuilder builder, SafeHtml content) {
-          builder.appendHtmlConstant("<div class='" + resources.style().itemWrap() + "'>");
+          builder.appendHtmlConstant("<div class='" + SideNavigation.this.resources.style().itemWrap() + "'>");
           builder.append(content);
           builder.appendHtmlConstant("</div>");
         }
