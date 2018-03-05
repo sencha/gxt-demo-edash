@@ -87,15 +87,6 @@
                 <include>**/*.html</include>
               </includes>
             </resource>
-            <resource>
-              <targetPath>META-INF</targetPath>
-              <directory>${basedir}/build/src/main/docs/license</directory>
-              <filtering>true</filtering>
-              <includes>
-                <include>license_${license}.txt</include>
-                <include>license_thirdparty.md</include>
-              </includes>
-            </resource>
           </webResources>
           <packagingExcludes>WEB-INF/deploy/**</packagingExcludes>
         </configuration>
