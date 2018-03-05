@@ -111,7 +111,7 @@
             <excludes>
               <exclude>**/super/**</exclude>
             </excludes>
-            <header>${user.dir}/build/src/main/license/license_${license}.txt</header>
+            <header>${project.basedir}/../build/src/main/docs/license/license_${license}.txt</header>
             <properties>
               <project.version>${project.version}</project.version>
               <license>${license}</license>
