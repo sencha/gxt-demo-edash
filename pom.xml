@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <gxt.version>4.0.3</gxt.version>
+    <gxt.version>4.0.4-SNAPSHOT</gxt.version>
 
     <!-- Global build settings -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
